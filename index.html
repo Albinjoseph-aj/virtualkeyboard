@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard</title>
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+</head>
+<style>
+  body{
+    background-color: black;
+  }
+  #spc{
+    padding-inline: 55px;
+    padding-top:15px ;
+    padding-bottom: 15px;
+    padding-right: 75px;
+    height: 50px;
+    width: 280px;
+  }
+  button{
+    font-size: 35px;
+    padding-inline: 10px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  .outer{
+    width: 100%;
+    margin-top: 150px; 
+    justify-items: center;
+  }
+  #keys{
+   margin-top: 15px;
+    font-size: 100px;
+    text-align: center;
+    width: 100%;
+    height: 140px;
+    background-color: black;
+    border: none;
+    color: white;
+  }
+  button:hover{
+    background-color:brown;
+    
+    color: white;
+  }
+  .keyboard{
+    border: 1px solid;
+    background-color:darksalmon;
+    border-radius: 5px;
+  }
+
+</style>
+
+
+<body>
+  
+<input type="text" id="keys">
+  <div class="outer">
+    <!-- <textarea name="" id="keys"></textarea> -->
+     
+    <div class="keyboard">
+      <div class="numbers">
+        <button onclick="clickKey('`')">`</button>
+        <button onclick="clickKey(1)">1</button>
+        <button onclick="clickKey(2)">2</button>
+        <button onclick="clickKey(3)">3</button>
+        <button onclick="clickKey(4)">4</button>
+        <button onclick="clickKey(5)">5</button>
+        <button onclick="clickKey(6)">6</button>
+        <button onclick="clickKey(7)">7</button>
+        <button onclick="clickKey(8)">8</button>
+        <button onclick="clickKey(9)">9</button>
+        <button onclick="clickKey('-')">-</button>
+        <button onclick="clickKey('=')">=</button>
+        <button id="clearData" onclick="removeKey()">Backspace</button>
+      </div>
+      <div class="words">
+        <button onclick="clickKey('   ')">tab</button>
+        <button onclick="clickKey('q')">Q</button>
+        <button onclick="clickKey('w')">W</button>
+        <button onclick="clickKey('e')">E</button>
+        <button onclick="clickKey('r')">R</button>
+        <button onclick="clickKey('t')">T</button>
+        <button onclick="clickKey('y')">Y</button>
+        <button onclick="clickKey('u')">U</button>
+        <button onclick="clickKey('i')">I</button>
+        <button onclick="clickKey('o')">O</button>
+        <button onclick="clickKey('p')">P</button>
+        <button onclick="clickKey(` `)">\</button>
+        
+        
+      </div>
+       <div class="words">
+        <button onclick="capsLock()">CapsLk</button>
+        <button onclick="clickKey('a')">A</button>
+        <button onclick="clickKey('s')">S</button>
+        <button onclick="clickKey('d')">D</button>
+        <button onclick="clickKey('f')">F</button>
+        <button onclick="clickKey('g')">G</button>
+        <button onclick="clickKey('h')">H</button>
+        <button onclick="clickKey('j')">J</button>
+        <button onclick="clickKey('k')">K</button>
+        <button onclick="clickKey('l')">L</button>
+        <button onclick="clickKey(';')">;</button>
+        <button onclick="clickKey(`'`)">'</button>
+        <button onclick="enterKey()">Enter</button>
+        
+        
+      </div>
+       <div class="words">
+        <button onclick="lshift()">Shift</button>
+        <button onclick="clickKey('z')">Z</button>
+        <button onclick="clickKey('x')">X</button>
+        <button onclick="clickKey('c')">C</button>
+        <button onclick="clickKey('v')">V</button>
+        <button onclick="clickKey('b')">B</button>
+        <button onclick="clickKey('n')">N</button>
+        <button onclick="clickKey('m')">M</button>
+        <button onclick="clickKey(',')">,</button>
+        <button onclick="clickKey('.')">.</button>
+        <button onclick="clickKey('/')">/</button>
+        <button onclick="rightShift()">Shift</button>        
+      </div>
+      <div class="bottom">
+        <button onclick="ctrl()">Ctrl</button>
+        <button onclick="fn()">Fn</button>
+        <button onclick="altKey()">Alt</button>
+        <button id="spc" onclick="clickKey(' ')"></button>
+        <button onclick="altKey()">Alt</button>
+        <button onclick="ctrl()">Ctrl</button>
+        <!-- <button onclick="leftKey()"></button>
+        
+        <button  onclick="upKey()"></button>
+        <button onclick="dowKey()"></button>
+        
+        
+        <button onclick="rightKey()"></button> -->
+               
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function clickKey(val){
+
+     
+      document.getElementById('keys').value+=val
+       console.log(val);
+    }
+
+    function removeKey(){
+      remove= document.getElementById('keys').value=(document.getElementById('keys').value).slice(0,-1)
+      console.log(remove);
+      
+    }
+    
+    
+  </script>
+</body>
+</html>
